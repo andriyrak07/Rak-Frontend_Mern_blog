@@ -1,4 +1,4 @@
-.title {
+.title {:required
   input {
     font-size: 42px;
     font-weight: 900;
@@ -13,7 +13,9 @@
 }
 
 .image {
-  width: 100%;
+  float: right;
+  width: 50%;
+  margin-bottom: 25px;
 }
 
 .tags {

@@ -57,16 +57,17 @@ export const AddPost = () => {
         text,
       };
 
-      // const { data } = isEditing
-      return await axios.patch(`/posts/${id}`, fields)
-        // : await axios.post('/posts', fields);
+      const { data } = isEditing
+        ? await axios.patch(`/posts/${id}`, fields)
+        : await axios.post("/posts", fields);
 
-      // const _id = isEditing ? id : data._id;
+      const _id = isEditing ? id : data._id;
 
-      // navigate(`/posts/${_id}`);
+      navigate(`/posts/${_id}`);
+      
     } catch (err) {
       console.warn(err);
-      alert('Failed to create post');
+      alert("Failed to create post");
     }
   };
 
@@ -102,7 +103,7 @@ export const AddPost = () => {
     []
   );
   if (!window.localStorage.getItem("token") && !isAuth) {
-    return <Navigate to="/" />
+    return <Navigate to="/" />;
   }
 
   return (
@@ -161,11 +162,7 @@ export const AddPost = () => {
         options={options}
       />
       <div className={styles.buttons}>
-        <Button
-          onClick={onSubmit}
-          size="large"
-          variant="contained"
-        >
+        <Button onClick={onSubmit} size="large" variant="contained">
           {isEditing ? "Save" : "Publish"}
         </Button>
         <a href="/">

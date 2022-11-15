@@ -117,9 +117,6 @@ const postsSlice = createSlice({
       state.posts.items = state.posts.items.filter(
         (obj) => obj._id !== action.meta.arg
       );
-      state.comments.items = state.comments.items.filter(
-        
-      )
     },
   },
 });

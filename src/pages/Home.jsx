@@ -87,7 +87,7 @@ export const Home = () => {
             <h1>The most popular posts</h1>
           </div>
           <Grid xs={8} item>
-            {(isTopLoading ? [...Array(10)] : topPosts.items).map(
+            {(isTopLoading ? [...Array(5)] : topPosts.items).map(
               (item, index) =>
                 isTopLoading ? (
                   <Post key={index} isLoading={true} />

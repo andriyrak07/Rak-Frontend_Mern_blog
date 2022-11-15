@@ -64,7 +64,7 @@ export const AddPost = () => {
       const _id = isEditing ? id : data._id;
 
       navigate(`/posts/${_id}`);
-      
+
     } catch (err) {
       console.warn(err);
       alert("Failed to create post");
@@ -93,7 +93,7 @@ export const AddPost = () => {
       spellChecker: false,
       maxHeight: "400px",
       autofocus: true,
-      placeholder: "Texting...",
+      placeholder: "Min lenght - 10",
       status: false,
       autosave: {
         enabled: true,
@@ -142,7 +142,7 @@ export const AddPost = () => {
       <TextField
         classes={{ root: styles.title }}
         variant="standard"
-        placeholder="Title of post"
+        placeholder="Title of post, min lenght - 3"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         fullWidth

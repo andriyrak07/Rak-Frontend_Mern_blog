@@ -100,16 +100,16 @@ const postsSlice = createSlice({
     },
 
     [fetchTopPosts.pending]: (state) => {
-      state.postComments.items = [];
-      state.postComments.status = "loading";
+      state.topPosts.items = [];
+      state.topPosts.status = "loading";
     },
     [fetchTopPosts.fulfilled]: (state, action) => {
-      state.postComments.items = action.payload;
-      state.postComments.status = "loaded";
+      state.topPosts.items = action.payload;
+      state.topPosts.status = "loaded";
     },
     [fetchTopPosts.rejected]: (state) => {
-      state.postComments.items = [];
-      state.postComments.status = "error";
+      state.topPosts.items = [];
+      state.topPosts.status = "error";
     },
 
     //Remove post
@@ -117,6 +117,9 @@ const postsSlice = createSlice({
       state.posts.items = state.posts.items.filter(
         (obj) => obj._id !== action.meta.arg
       );
+      state.comments.items = state.comments.items.filter(
+        
+      )
     },
   },
 });

@@ -99,6 +99,7 @@ const postsSlice = createSlice({
       state.comments.status = "error";
     },
 
+    // Get top posts
     [fetchTopPosts.pending]: (state) => {
       state.topPosts.items = [];
       state.topPosts.status = "loading";
